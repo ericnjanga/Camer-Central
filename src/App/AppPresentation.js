@@ -6,6 +6,8 @@ import Drawer from './../components/Drawer/Drawer.js';
 
 import ApplicationFilters from './../components/FuncAsChild/AppFilters.js';
 
+import { getCollItemByPptVal } from './../utilities/func/mix1.js';
+
 
 import { FilterContext } from './../settings/basic.js';
 
@@ -34,10 +36,10 @@ const AppPresentation = ({
                 <p>filter 2: { filters[1].name }</p>
               </div>
 
-
-    
               <Map
-                {...filters[1]}
+                {
+                  ...getCollItemByPptVal(filters, 'type', 'city')[0]
+                }
               />
             </React.Fragment>
           )
@@ -48,6 +50,8 @@ const AppPresentation = ({
   );
 
 };
+
+
 
 
 /**

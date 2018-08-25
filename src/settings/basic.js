@@ -32,6 +32,37 @@ const settings = {
     },
     */
     {
+      id: 2,
+      title: 'Villes',
+      name: 'cities',
+      active: true,
+      data: [
+        {
+          id: 1,
+          type: 'city',
+          title: 'Toronto',
+          name: 'toronto',
+          value: 'YYZ', // city's 3 letters code
+          center: {
+            lat: 43.653225,
+            lng: -79.383186,
+          },
+          active: true,
+        },
+        {
+          id: 2,
+          type: 'city',
+          title: 'Montreal',
+          name: 'montreal',
+          value: 'YUL', // city's 3 letters code
+          center: {
+            lat: 45.501690,
+            lng: -73.567253,
+          },
+        },
+      ],
+    },
+    {
       id: 1,
       title: 'Activités',
       name: 'activites',
@@ -64,40 +95,17 @@ const settings = {
         },
       ],
     },
-    {
-      id: 2,
-      title: 'Villes',
-      name: 'cities',
-      active: true,
-      data: [
-        {
-          id: 1,
-          title: 'Toronto',
-          name: 'toronto',
-          value: 'YYZ', // city's 3 letters code
-          center: {
-            lat: 43.653225,
-            lng: -79.383186,
-          },
-          active: true,
-        },
-        {
-          id: 2,
-          title: 'Montreal',
-          name: 'montreal',
-          value: 'YUL', // city's 3 letters code
-          center: {
-            lat: 45.501690,
-            lng: -73.567253,
-          },
-        },
-      ],
-    },
+    
   ],
   // filter: {
   //   activity: lists.activities[0].value,
   //   city: lists.cities[0].value,
   // },
+
+  // This data will change depending on what filter is selected
+  points: [
+
+  ],
 };
 
 // Make sure the shape of the default value passed to

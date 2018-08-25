@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import AppPresentation from './AppPresentation.js';
-import { lists } from './../settings/dummy-data.js';
+// import { lists } from './../settings/dummy-data.js';
 import settings, { FilterContext } from './../settings/basic.js';
-import { toggleCollectionProperty } from './../utilities/func/mix1.js';
+import { toggleCollectionProperty, getCollItemByPptVal, getAllItemsOfCollByPptVal } from './../utilities/func/mix1.js';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -23,28 +23,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-
-  }
-
-
-  getActiveFilters() {
-
-    const { filters } = this.state;
-    const activeFilters = [];
-
-    for (let i = 0, l = filters.length; i < l; i += 1) {
-
-      const t = filters[i].data.filter((item) => {
-
-        return item.active === true;
-
-      });
-
-      activeFilters.push(t[0]);
-
-    }
-
-    return activeFilters;
 
   }
 
@@ -95,7 +73,7 @@ class App extends Component {
   render() {
 
     return (
-      <FilterContext.Provider value={this.getActiveFilters()}>
+      <FilterContext.Provider value={ getAllItemsOfCollByPptVal(this.state.filters, 'data', 'active', true)}>
         <AppPresentation
           {...this.state}
           handleChange={this.handleChange}

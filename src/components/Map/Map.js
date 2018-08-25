@@ -17,9 +17,9 @@ class Map extends React.Component {
 
   }
 
-  // componentDidMount() {
-
-  // }
+  componentDidMount() {
+    console.log('?????',this.props)
+  }
 
 
   // componentDidUpdate(prevProps, prevState, snapshot) {

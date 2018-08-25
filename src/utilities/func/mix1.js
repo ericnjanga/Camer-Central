@@ -1,4 +1,9 @@
 
+/**
+ * BASIC UTILITY FUNCTIONS
+ * --------------------------
+ * - database firebase function needed
+ */
 
 /**
  * Toggle property of a specific item of a collection (give the opposite value to the rest)
@@ -46,3 +51,36 @@ export const toggleCollectionProperty = ({
 };
 
 
+/**
+ * Get an from array, an item which property @ppt has the value @pptValue
+ * - collection structure: arr = [{ppt1:pptValue1, ppt2:pptValue2}, {ppt3:pptValue3}, ...]
+ * @param {*} arrColl 
+ * @param {*} ppt 
+ * @param {*} pptValue 
+ */
+export function getCollItemByPptVal(arrColl, ppt, pptValue) {
+  return arrColl.filter((collItem) => {
+    return collItem[ppt] === pptValue;
+  });
+}
+
+
+/**
+ * Within an array of multiple objects
+ * - Return an array of all objects within that array which property @ppt has the value @pptValue
+ * - (resuses getCollItemByPptVal())
+ * - collection structure: arr = [{
+ *    ppt1: [{ppt1:pptValue1, ppt2:pptValue2}, {ppt3:pptValue3}, ...],
+ *    ppt2: [{ppt1:pptValue1, ppt2:pptValue2}, {ppt3:pptValue3}, ...],
+ *  }]
+ * @param {*} arrColl 
+ * @param {*} ppt 
+ * @param {*} pptValue 
+ */
+export function getAllItemsOfCollByPptVal(arrCollection, collItemPpt, ppt, pptValue) {
+
+  return arrCollection.map((arrColl) => {
+    return getCollItemByPptVal(arrColl[collItemPpt], ppt, pptValue)[0];
+  });
+
+}
