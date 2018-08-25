@@ -1,0 +1,245 @@
+
+
+export const dummyPost = {
+  id: 7,
+  title: '[title] Apple pie soufflé candy',
+  description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+  price: '700.00',
+  make: 'toyota',
+  year: '2000',
+  bodyType: 'sedan',
+  kilometers: '200,000',
+  color: 'red',
+  transmission: 'automatic',
+  nbDoors: '4',
+  fuelType: 'Gasoline',
+  creationDate: '11/07/2018',
+  isVisible: true,
+};
+
+
+export const lists = {
+  activities: [
+    {
+      id: 0,
+      name: 'activity 1',
+      value: 'activity 1',
+      active: true,
+    },
+    {
+      id: 1,
+      name: 'activity 2',
+      value: 'activity 2',
+    },
+    {
+      id: 2,
+      name: 'activity 3',
+      value: 'activity 3',
+    },
+    {
+      id: 3,
+      name: 'activity 4',
+      value: 'activity 4',
+    },
+  ],
+  cities: [
+    {
+      id: 1,
+      name: 'Toronto',
+      value: 'toronto',
+      lat: 43.653225,
+      lng: -79.383186,
+      active: true,
+    },
+    {
+      id: 2,
+      name: 'Montreal',
+      value: 'montreal',
+      lat: 45.501690,
+      lng: -73.567253,
+    },
+  ],
+};
+
+// export const user = {
+//   biography: '--------?mmmmm',
+//   displayName: 'Eric Njan?????',
+//   email: 'eric.njanga@gmail.com',
+//   lastSignin: 1531940865148,
+//   lat: 43.6513932,
+//   lng: -79.5642048,
+//   phoneNumber: 'xxx xxxx xxx',
+//   photoURL: 'https://lh5.googleusercontent.com/-COiFmnKgWAY/AAAAAAAAAAI/AAAAAAAABTk/gGWhai835yE/photo.jpg',
+//   uid: '0D2s9A7OyLQqZJS6sdse1SZgspK2',
+//   visible: true,
+// };
+
+
+// export const dummyPosts = [
+//   {
+//     key: 0,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   },
+//   {
+//     key: 1,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   },{
+//     key: 2,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   },{
+//     key: 3,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   },{
+//     key: 14,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   },{
+//     key: 4,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   },{
+//     key: 5,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   },{
+//     key: 6,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   },{
+//     key: 7,
+//     title: '[title] Apple pie soufflé candy',
+//     description: 'Chocolate cake icing pie dragée jujubes sweet roll apple pie jelly icing. Jelly-o gingerbread sweet ',
+//     price: '700.00',
+//     make: 'toyota',
+//     year: '2000',
+//     bodyType: 'sedan',
+//     kilometers: '200,000',
+//     color: 'red',
+//     transmission: 'automatic',
+//     nbDoors: '4',
+//     fuelType: 'Gasoline',
+//     creationDate: '11/07/2018',
+//     img: '...',
+//     isVisible: true,
+//   }
+// ];
+
+
+export const appText = {
+  brandName: `Camer Central`,
+  loginIntro: `<b>[login - introText]</b> Chocolate bar apple pie lollipop brownie carrot 
+  cake halvah chocolate bar. Toffee candy tiramisu gummi bears. Halvah 
+  cake cheesecake.`,
+  about: ``,
+};
+
+
+export const googleMap = {
+  apiKey: 'AIzaSyAYz48tVZCR5JYzjO2yPPZRDOCFRwxQURY',
+};
+
+export const adminDefault = {
+  id: '-LIkl4k0oAv47lZc1GqQ',
+  // name: "admin",  --- online
+  // password: "11"
+};
