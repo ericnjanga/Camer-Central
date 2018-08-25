@@ -19,31 +19,27 @@ const AppPresentation = ({
       <Drawer
         data={filters}
         handleChange={handleChange}
-      /> 
-  
-      <Map />
+      />
 
-      {
-      //   <ApplicationFilters>
-      //   {
-      //     (filters) => {
-      //       return (
-              
-      //       )
-      //     }
-      //   }
-      // </ApplicationFilters>
-      }
+      
 
 
       <FilterContext.Consumer>
         {
           filters => (
-            <div style={{ position: 'fixed', bottom: '150px', padding: '10px',
-            right: '150px', background: '#333', color: '#fff', zIndex: '1000'}}>
-              <p>filter 1: { filters[0].name }</p>
-              <p>filter 2: { filters[1].name }</p>
-            </div>
+            <React.Fragment>
+              <div style={{ position: 'fixed', bottom: '150px', padding: '10px',
+              right: '150px', background: '#333', color: '#fff', zIndex: '1000'}}>
+                <p>filter 1: { filters[0].name }</p>
+                <p>filter 2: { filters[1].name }</p>
+              </div>
+
+
+    
+              <Map
+                {...filters[1]}
+              />
+            </React.Fragment>
           )
         }
       </FilterContext.Consumer>

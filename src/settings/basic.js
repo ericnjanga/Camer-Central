@@ -2,22 +2,52 @@ import React from 'react';
 
 const settings = {
   filters: [
+    /*
     {
       id: 0,
-      title: 'Activités',
-      name: 'activites',
+      title: 'Businesses',
+      name: 'businesses',
+      active: true,
       data: [
         {
           id: 0,
-          title: 'Activity 1',
-          name: 'activity 1',
+          title: 'Lawyers',
+          name: 'lawyers',
+          value: 'BIZ1',
+          active: true,
+        },
+        {
+          id: 1,
+          title: 'Real Estate Agents',
+          name: 'real-estate-agents',
+          value: 'BIZ2',
+        },
+        {
+          id: 2,
+          title: 'Shops',
+          name: 'shops',
+          value: 'BIZ3',
+        },
+      ],
+    },
+    */
+    {
+      id: 1,
+      title: 'Activités',
+      name: 'activites',
+      active: true,
+      data: [
+        {
+          id: 0,
+          title: 'Parties',
+          name: 'parties',
           value: 'ATV1',
           active: true,
         },
         {
           id: 1,
-          title: 'Activity 2',
-          name: 'activity 2',
+          title: 'Conferences',
+          name: 'conferences',
           value: 'ATV2',
         },
         {
@@ -35,17 +65,20 @@ const settings = {
       ],
     },
     {
-      id: 1,
+      id: 2,
       title: 'Villes',
       name: 'cities',
+      active: true,
       data: [
         {
           id: 1,
           title: 'Toronto',
           name: 'toronto',
           value: 'YYZ', // city's 3 letters code
-          lat: 43.653225,
-          lng: -79.383186,
+          center: {
+            lat: 43.653225,
+            lng: -79.383186,
+          },
           active: true,
         },
         {
@@ -53,8 +86,10 @@ const settings = {
           title: 'Montreal',
           name: 'montreal',
           value: 'YUL', // city's 3 letters code
-          lat: 45.501690,
-          lng: -73.567253,
+          center: {
+            lat: 45.501690,
+            lng: -73.567253,
+          },
         },
       ],
     },

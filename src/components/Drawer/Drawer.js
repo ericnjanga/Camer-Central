@@ -24,11 +24,6 @@ const Drawer = ({ //DrawerPresentation
       </h2>
 
       {
-
-console.log('data=', data)
-      }
-
-      {
         data.map(dt => {
           return (
             <DropdownSelector
@@ -44,26 +39,12 @@ console.log('data=', data)
         })
       }
 
-
-      {/* <DropdownSelector
-        title="Activités"
-        name="activity"
-        type="filter"
-        value={ getDefaultVal(lists.activities)[0].value }
-        list={lists.activities}
-        handleChange={handleChange}
-      /> */}
-
-      {/* 
-
-      <DropdownSelector
-        title="Villes"
-        name="city"
-        type="filter"
-        value={ getDefaultVal(lists.cities)[0].value }
-        list={lists.cities}
-        handleChange={handleChange}
-      /> */}
+      <h3>Nice Dev Examples</h3>
+      <ul>
+        <li>
+          <a target="_blank" href="http://google-map-react.github.io/google-map-react/map/balderdash">example 1</a>
+        </li>
+      </ul>
 
       <ul>
         <li>Featured advertising (based on user selection)</li>
@@ -75,7 +56,7 @@ console.log('data=', data)
 
 
 const getDefaultVal = (list) => {
-  console.log('list=', list);
+  // console.log('list=', list);
   return list.filter(item => item.active);
 }
 

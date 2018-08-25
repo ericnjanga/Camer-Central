@@ -10,6 +10,7 @@ import { googleMap } from './../../settings/dummy-data';
  * UI Rendering
  */
 const MapPresentation = ({
+  title,
   center,
   zoom,
   classes,
@@ -20,13 +21,14 @@ const MapPresentation = ({
     <div className={classes.root}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: googleMap.apiKey }}
-        defaultCenter={center}
+        // defaultCenter={center}
+        center={center}
         defaultZoom={zoom}
       >
         <Point
           lat={43.653225}
           lng={-79.383186}
-          text={'Toronto'}
+          text={title}
         />
       </GoogleMapReact>
     </div>
@@ -48,8 +50,6 @@ const styles = theme => ({
     // maxWidth: '400px',
   },
 
-  center: PropTypes.shape({}).isRequired,
-  zoom: PropTypes.number.isRequired,
   // textField: {
   //   marginLeft: theme.spacing.unit,
   //   marginRight: theme.spacing.unit,
@@ -62,7 +62,9 @@ const styles = theme => ({
  * Component props validation
  */
 MapPresentation.propTypes = {
-  // name: PropTypes.string,
+  title: PropTypes.string,
+  center: PropTypes.shape({}).isRequired,
+  zoom: PropTypes.number.isRequired,
   // formActive: PropTypes.bool,
   // handleChange: PropTypes.func.isRequired,
   // handleSubmit: PropTypes.func.isRequired,
@@ -74,7 +76,7 @@ MapPresentation.propTypes = {
  * Component props default values
  */
 MapPresentation.defaultProps = {
-  // name: '',
+  title: '',
   // formActive: true,
   // spacing: '16',
   // style: { // Default styles

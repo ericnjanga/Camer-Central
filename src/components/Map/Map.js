@@ -12,16 +12,7 @@ class Map extends React.Component {
 
     super(props);
     this.state = {
-      defaultProps: {
-        center: {
-          // lat: 59.95,
-          // lng: 30.33,
-
-          lat: 43.653225,
-          lng: -79.383186,
-        },
-        zoom: 14,
-      }
+      zoom: 14,
     };
 
   }
@@ -30,11 +21,19 @@ class Map extends React.Component {
 
   // }
 
+
+  // componentDidUpdate(prevProps, prevState, snapshot) {
+
+  //   console.log('-componentDidUpdate=', prevProps, prevState, snapshot);
+
+  // }
+
   render() {
 
-    return(
+    return (
       <MapPresentation
-        {...this.state.defaultProps}
+        {...this.props}
+        {...this.state}
       />
     );
 
@@ -46,7 +45,7 @@ class Map extends React.Component {
  * Component props validation
  */
 Map.propTypes = {
-  // name: PropTypes.string,
+  center: PropTypes.PropTypes.shape({}),
   // formActive: PropTypes.bool,
   // handleChange: PropTypes.func.isRequired,
   // spacing: PropTypes.string,
@@ -57,6 +56,11 @@ Map.propTypes = {
  * Component props default values
  */
 Map.defaultProps = {
+  // TODO: These values by default should be the visitor's location
+  center: PropTypes.PropTypes.shape({
+    lat: 59.95,
+    lng: 30.33,
+  }),
   // name: '',
   // formActive: true,
   // spacing: '16',

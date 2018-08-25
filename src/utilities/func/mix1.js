@@ -20,11 +20,11 @@ export const toggleCollectionProperty = ({
 }) => {
 
 
-  console.log('----', targetId, 
-  itemIdProp,
-  itemProp, 
-  itemVal, 
-  itemOppVal);
+  // console.log('----', targetId, 
+  // itemIdProp,
+  // itemProp, 
+  // itemVal, 
+  // itemOppVal);
 
   const tplCollection = [...arrCollection];
 
