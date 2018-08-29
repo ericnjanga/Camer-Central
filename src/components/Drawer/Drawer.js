@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import PreviewPoint from './../../terminals/PreviewPoint.js';
 
 import DropdownSelector from './DropdownSelector/DropdownSelector.js';
 
@@ -22,11 +23,12 @@ const Drawer = ({ //DrawerPresentation
         { appText.brandName }
       </h2>
 
-        {
-          points.map((point) => { 
-            return <p>{point.title}<p/>
-          })
-        }
+
+      {
+        points.map(point => <PreviewPoint {...point} />)
+      }
+
+      
 
       {
         // data.map(dt => {
@@ -44,24 +46,27 @@ const Drawer = ({ //DrawerPresentation
         // })
       }
 
-      <h3>Nice Dev Examples</h3>
-      <ul>
-        <li>
-          <a target="_blank" href="http://google-map-react.github.io/google-map-react/map/balderdash">example 1</a>
-        </li>
-      </ul>
+      <div style={{ border: '3px solid lime', marginTop: '100px', padding: '10px'}}>
+        <h3>Nice Dev Examples</h3>
+        <ul>
+          <li>
+            <a target="_blank" href="http://google-map-react.github.io/google-map-react/map/balderdash">example 1</a>
+          </li>
+        </ul>
 
-      <ul>
-        <li>Featured advertising (based on user selection)</li>
-        <li>Contact Us</li>
-      </ul>
+        <ul>
+          <li>Featured advertising (based on user selection)</li>
+          <li>Contact Us</li>
+        </ul>
 
-      <h3>Central Market place</h3>
-      <ul>
-        <li>
-          Selling background images for (web, mobile)
-        </li>
-      </ul>
+        <h3>Central Market place</h3>
+        <ul>
+          <li>
+            Selling background images for (web, mobile)
+          </li>
+        </ul>
+      </div>
+      
 
     </div>
   );
