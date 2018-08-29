@@ -12,17 +12,21 @@ class App extends Component {
 
     super(props);
     this.state = {
-      filters: [...settings.filters],
-      // filter: {
-      //   ...settings.filter,
-      // },
-      // lists: { ...lists },
     };
     this.handleChange = this.handleChange.bind(this);
 
   }
 
+  /**
+   * Save active city and its connected points in the state
+   */
   componentDidMount() {
+
+    // 1- Get active city
+    const city = getCollItemByPptVal(settings.cities, 'active', true)[0];
+    const points = settings.points.filter(point => point.cityCode===city.code);
+
+    this.setState({ city, points });
 
   }
 
@@ -35,10 +39,9 @@ class App extends Component {
 
     const targetName = event.target.name;
     const targetValue = event.target.value;
-    const targetType = event.target.getAttribute('data-type');
+    // const targetType = event.target.getAttribute('data-type');
     const { filters } = this.state;
     // state[targetType][targetName] = targetValue;
-
     // console.log('filters =', filters);
     // console.log(`***${targetName} - ${targetValue} - ${targetType} - `);
 
@@ -72,8 +75,14 @@ class App extends Component {
 
   render() {
 
+    if (!this.state.points || !this.state.city) {
+
+      return '...loading. Please wait!';
+
+    }
+
     return (
-      <FilterContext.Provider value={ getAllItemsOfCollByPptVal(this.state.filters, 'data', 'active', true)}>
+      <FilterContext.Provider value={{ ...this.state }}>
         <AppPresentation
           {...this.state}
           handleChange={this.handleChange}

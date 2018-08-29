@@ -11,8 +11,7 @@ import { appText } from './../../settings/dummy-data.js';
  */
 const Drawer = ({ //DrawerPresentation
   // brandName,
-  data,
-  filter,
+  points,
   handleChange,
   classes,
 }) => {
@@ -23,20 +22,26 @@ const Drawer = ({ //DrawerPresentation
         { appText.brandName }
       </h2>
 
+        {
+          points.map((point) => { 
+            return <p>{point.title}<p/>
+          })
+        }
+
       {
-        data.map(dt => {
-          return (
-            <DropdownSelector
-              key={dt.id}
-              title={dt.title}
-              name={dt.name}
-              type="filters"
-              value={ getDefaultVal(dt.data)[0].value }
-              list={dt.data}
-              handleChange={handleChange}
-            />
-          )
-        })
+        // data.map(dt => {
+        //   return (
+        //     <DropdownSelector
+        //       key={dt.id}
+        //       title={dt.title}
+        //       name={dt.name}
+        //       type="filters"
+        //       value={ getDefaultVal(dt.data)[0].value }
+        //       list={dt.data}
+        //       handleChange={handleChange}
+        //     />
+        //   )
+        // })
       }
 
       <h3>Nice Dev Examples</h3>
@@ -50,6 +55,14 @@ const Drawer = ({ //DrawerPresentation
         <li>Featured advertising (based on user selection)</li>
         <li>Contact Us</li>
       </ul>
+
+      <h3>Central Market place</h3>
+      <ul>
+        <li>
+          Selling background images for (web, mobile)
+        </li>
+      </ul>
+
     </div>
   );
 };

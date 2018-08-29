@@ -12,13 +12,13 @@ class Map extends React.Component {
 
     super(props);
     this.state = {
-      zoom: 14,
+      zoom: 12, //14,
     };
 
   }
 
   componentDidMount() {
-    console.log('?????',this.props)
+    console.log('?????',this.props);
   }
 
 
@@ -32,7 +32,8 @@ class Map extends React.Component {
 
     return (
       <MapPresentation
-        {...this.props}
+        {...this.props.city}
+        points={this.props.points}
         {...this.state}
       />
     );
@@ -45,7 +46,8 @@ class Map extends React.Component {
  * Component props validation
  */
 Map.propTypes = {
-  center: PropTypes.PropTypes.shape({}),
+  city: PropTypes.PropTypes.shape({}).isRequired,
+  // city: PropTypes.PropTypes.shape({}),
   // formActive: PropTypes.bool,
   // handleChange: PropTypes.func.isRequired,
   // spacing: PropTypes.string,
@@ -56,11 +58,7 @@ Map.propTypes = {
  * Component props default values
  */
 Map.defaultProps = {
-  // TODO: These values by default should be the visitor's location
-  center: PropTypes.PropTypes.shape({
-    lat: 59.95,
-    lng: 30.33,
-  }),
+  
   // name: '',
   // formActive: true,
   // spacing: '16',

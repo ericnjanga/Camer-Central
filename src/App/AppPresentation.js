@@ -12,34 +12,36 @@ import { getCollItemByPptVal } from './../utilities/func/mix1.js';
 import { FilterContext } from './../settings/basic.js';
 
 const AppPresentation = ({
-  filters,
+  points,
   handleChange,
 }) => {
 
   return (
     <div className="App">
       <Drawer
-        data={filters}
+        // data={filters}
+        points={points}
         handleChange={handleChange}
       />
 
-      
+  
 
 
       <FilterContext.Consumer>
         {
           filters => (
             <React.Fragment>
+              {
+                console.log('...', filters)
+              }
               <div style={{ position: 'fixed', bottom: '150px', padding: '10px',
               right: '150px', background: '#333', color: '#fff', zIndex: '1000'}}>
-                <p>filter 1: { filters[0].name }</p>
-                <p>filter 2: { filters[1].name }</p>
+                <p>active city: { filters.city.name }</p>
+                <p>total points: { filters.points.length }</p>
               </div>
 
               <Map
-                {
-                  ...getCollItemByPptVal(filters, 'type', 'city')[0]
-                }
+                {...filters}
               />
             </React.Fragment>
           )
@@ -58,6 +60,7 @@ const AppPresentation = ({
  * Component props validation
  */
 AppPresentation.propTypes = {
+  points: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   handleChange: PropTypes.func.isRequired,
 };
 
