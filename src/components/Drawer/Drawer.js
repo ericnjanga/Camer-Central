@@ -67,7 +67,6 @@ const Drawer = ({ //DrawerPresentation
 
 
 const getDefaultVal = (list, ppt) => {
-  console.log('list=---', list.filter(item => item.active) );
   return list.filter(item => item.active)[0][ppt];
 }
 

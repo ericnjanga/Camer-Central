@@ -7,6 +7,33 @@ import { toggleCollectionProperty, getCollItemByPptVal, getAllItemsOfCollByPptVa
 import './App.css';
 
 
+/**
+ * Terminal functions
+ * (for App.js)
+ * --------------------
+ * --------------------
+ */
+
+// Get points based on active city and update both 'cities' and 'point'
+// (In the component context)
+function updateFilters(activeCity, cities, pointColl) {
+
+  // Get points related to 'active city' (active city is set on the cloud)
+  const points = pointColl.filter(point => point.cityCode===activeCity.code);
+
+  // Save list of cities and points
+  this.setState({ cities, points });
+
+}
+
+/**
+ * Terminal functions
+ * (for App.js)
+ * --------------------
+ * --------------------
+ */
+
+
 class App extends Component {
 
   constructor(props) {
@@ -27,55 +54,43 @@ class App extends Component {
     const { cities } = settings;
     const activeCity = getCollItemByPptVal(cities, 'active', true)[0];
 
-    // Get points related to 'active city' (active city is set on the cloud)
-    const points = settings.points.filter(point => point.cityCode===activeCity.code);
-
-    // Save list of cities and points
-    this.setState({ cities, points });
+    updateFilters.call(this, activeCity, cities, settings.points);
 
   }
 
 
   /**
-   * Update target value in the appropriate state property
+   * Handle changes in cities
    * @param {*} event
    */
   handleChange(event) {
 
-    const targetName = event.target.name;
     const targetValue = event.target.value;
-    // const targetType = event.target.getAttribute('data-type');
-    const { filters } = this.state;
-    // state[targetType][targetName] = targetValue;
-    // console.log('filters =', filters);
-    // console.log(`***${targetName} - ${targetValue} - ${targetType} - `);
+    const citiesColl = this.state.cities;
+    let activeCity;
+    let cities;
 
-    for (let i = 0, l = filters.length; i < l; i += 1) {
+    for (let i = 0, l = citiesColl.length; i < l; i += 1) {
 
-      if (filters[i].name === targetName) {
+      if (citiesColl[i].title === targetValue) {
 
-        // console.log('filters[i]', filters[i]);
-
-        const t = toggleCollectionProperty({
-          arrCollection: filters[i].data,
+        activeCity = citiesColl[i];
+        cities = toggleCollectionProperty({
+          arrCollection: citiesColl,
           targetId: targetValue,
-          itemIdProp: 'value',
+          itemIdProp: 'title',
           itemProp: 'active',
           itemVal: true,
           itemOppVal: false,
         });
 
-        // console.log('ffffff', t);
-        filters[i].data = t;
-        // filters[i].data.splice(1, i, t);
-
       }
 
     }
 
-    this.setState({ filters });
+    updateFilters.call(this, activeCity, cities, settings.points);
 
-  }
+  } // [end] handleChange
 
 
   render() {
