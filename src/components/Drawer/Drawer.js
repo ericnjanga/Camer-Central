@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import PreviewPoint from './../../terminals/PreviewPoint.js';
+import StarIcon from '@material-ui/icons/Star';
 
 import DropdownSelector from './DropdownSelector/DropdownSelector.js';
 
@@ -19,31 +20,41 @@ const Drawer = ({ //DrawerPresentation
 }) => {
 
   return (
-    <div className={classes.root}>
-      <h2 className={classes.brand}>
-        { appText.brandName }
-      </h2>
+    <div className={`app-sidebar ${classes.root}`}>
+      <section className="app-sidebar__section">
+        <h2 className={classes.brand}>
+          <StarIcon className={classes.brandIcon} />
+          { appText.brandName }
+        </h2>
+      </section>
 
 
-      <DropdownSelector
-        list={filters1}
-        title="Cities"
-        name="Cities"
-        type="filters"
-        value={ getDefaultVal(filters1, 'title') }
-        handleChange={handleChange}
-      />
+      <section className="app-sidebar__section">
+        <DropdownSelector
+          list={filters1}
+          title="Cities"
+          name="Cities"
+          type="filters"
+          value={ getDefaultVal(filters1, 'title') }
+          handleChange={handleChange}
+          className={classes.brand}
+        />
+      </section>
 
-      {
-        points.map(point => <PreviewPoint key={point.id} {...point} />)
-      }
+      <section className="app-sidebar__section">
+        {
+          points.map(point => <PreviewPoint key={point.id} {...point} />)
+        }
+      </section>
 
 
-      <div style={{ border: '3px solid lime', marginTop: '100px', padding: '10px'}}>
-        <h3>Nice Dev Examples</h3>
+
+      <section className="app-sidebar__section" style={{ border: '3px solid lime', padding: '10px'}}>
+ 
+        <h3>Nice Steps</h3>
         <ul>
           <li>
-            <a target="_blank" href="http://google-map-react.github.io/google-map-react/map/balderdash">example 1</a>
+            Create <a target="_blank" href="http://google-map-react.github.io/google-map-react/map/balderdash">this interraction</a> | <a href="https://github.com/google-map-react/old-examples/blob/master/web/flux/components/examples/x_main/main_map_block.jsx" target="_blank">Code source</a>
           </li>
         </ul>
 
@@ -57,8 +68,8 @@ const Drawer = ({ //DrawerPresentation
           <li>
             Selling background images for (web, mobile)
           </li>
-        </ul>
-      </div>
+        </ul> 
+      </section>
       
 
     </div>
@@ -81,7 +92,7 @@ const styles = theme => ({
     height: '100%',
     maxWidth: '400px',
     color: '#fff',
-    background: '#4688F1',
+    background: '#216728',
     // ...theme.mixins.gutters(),
 
     textAlign: 'left',
@@ -89,8 +100,16 @@ const styles = theme => ({
     // paddingBottom: theme.spacing.unit * 4,
     // maxWidth: '400px',
   },
+  brandIcon: {
+    position: 'relative',
+    top: '12px',
+    marginRight: '5px',
+    color: '#f9ff00',
+    fontSize: '50px',
+  },
   brand: {
-    color: 'lime',
+    color: '#fff',
+    textTransform: 'uppercase',
   },
   // textField: {
   //   marginLeft: theme.spacing.unit,

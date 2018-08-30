@@ -17,6 +17,7 @@ const DropdownSelector = ({
   value,
   handleChange,
   classes,
+  className,
 }) => {
 
   return(
@@ -24,6 +25,7 @@ const DropdownSelector = ({
       <FormControl className={classes.formControl}>
         <InputLabel htmlFor={name}>{title}</InputLabel>
         <Select
+          className={className}
           native
           value={value}
           onChange={handleChange}

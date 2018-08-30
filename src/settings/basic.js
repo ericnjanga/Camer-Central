@@ -42,6 +42,7 @@ const points = [
     id: 0,
     name: 'Cineplex Odeon Queensway',
     title: 'Cineplex Odeon Queensway',
+    owner: 'owner0',
     images: [
       'http://photos.cinematreasures.org/production/photos/27895/1317419362/large.jpg?1317419362',
       'http://photos.cinematreasures.org/production/photos/27895/1317419362/large.jpg?1317419362',
@@ -58,6 +59,7 @@ const points = [
     id: 1,
     name: 'Fox & Fiddle',
     title: 'Fox & Fiddle',
+    owner: 'owner1',
     images: [
       'http://photos.cinematreasures.org/production/photos/27895/1317419362/large.jpg?1317419362',
       'http://photos.cinematreasures.org/production/photos/27895/1317419362/large.jpg?1317419362',
@@ -70,11 +72,29 @@ const points = [
     address: '1285 Finch Ave W, North York, ON M3 J3J7', // physical address
     price: null, // is this something that can be purchased?
   },
+  {
+    id: 2,
+    name: 'Tournoi de soccer',
+    title: 'Tournoi de soccer',
+    owner: 'Association Yemba',
+    images: [
+      'http://photos.cinematreasures.org/production/photos/27895/1317419362/large.jpg?1317419362',
+      'http://photos.cinematreasures.org/production/photos/27895/1317419362/large.jpg?1317419362',
+    ],
+    lat: 43.714981,
+    lng: -79.287131,
+    desc: `Par ce bias,  l'Association Yemba annonce l'organisation  d'un  Tournoi de  soccer le 22 septembre 2018 et vous y invite, votre groupe, vos amis et votre famille.`,
+    type: 'biz', // business? activity?
+    cityCode: 'YYZ', // city 3 letters code
+    address: '45 Fairfax Crescent  Scarborough On M1L Z6A', // physical address
+    price: null, // is this something that can be purchased?
+  },
   // Montreal ...
   {
     id: 0,
     name: 'Club Unity',
     title: 'Club Unity',
+    owner: 'owner0',
     images: [
       'http://clubzone.com/content/uploads/photos/fb3218639/unityhorrorstory-2015-11-08-85-360x360.jpg',
       'http://cdn.oboxeditions.com/sites/prod/files/styles/largehd/public/article/10-soirees-ou-aller-danser-ce-long-week-end-montreal-426164.jpg',
@@ -91,6 +111,7 @@ const points = [
     id: 1,
     name: 'Old Port of Montreal',
     title: 'Old Port of Montreal',
+    owner: 'owner1',
     images: [
       'http://clubzone.com/content/uploads/photos/fb3218639/unityhorrorstory-2015-11-08-85-360x360.jpg',
       'http://cdn.oboxeditions.com/sites/prod/files/styles/largehd/public/article/10-soirees-ou-aller-danser-ce-long-week-end-montreal-426164.jpg',
@@ -104,9 +125,6 @@ const points = [
     price: null, // is this something that can be purchased?
   },
 ];
-
-
-
 
 
 const settings = {
