@@ -22,7 +22,7 @@ function updateFilters(activeCity, cities, pointColl) {
   const points = pointColl.filter(point => point.cityCode===activeCity.code);
 
   // Save list of cities and points
-  this.setState({ cities, points });
+  this.setState({ activeCity, cities, points });
 
 }
 

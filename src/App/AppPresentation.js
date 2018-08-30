@@ -12,6 +12,7 @@ import { getCollItemByPptVal } from './../utilities/func/mix1.js';
 import { FilterContext } from './../settings/basic.js';
 
 const AppPresentation = ({
+  activeCity,
   cities,
   points,
   handleChange,
@@ -26,7 +27,13 @@ const AppPresentation = ({
         handleChange={handleChange}
       />
 
+      <Map
+        center={activeCity.center}
+        points={points}
+      />
+
       {
+        console.log('>>>>', points)
         // <FilterContext.Consumer>
         // {
         //   filters => (
@@ -39,10 +46,6 @@ const AppPresentation = ({
         //         <p>active city: { filters.city.name }</p>
         //         <p>total points: { filters.points.length }</p>
         //       </div>
-
-        //       <Map
-        //         {...filters}
-        //       />
         //     </React.Fragment>
         //   )
         // }

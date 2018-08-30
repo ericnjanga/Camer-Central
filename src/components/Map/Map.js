@@ -5,6 +5,8 @@ import MapPresentation from './MapPresentation.js';
 
 /**
  * Component logic
+ * ---------------------
+ * (future great calculations will be done here before the map is loaded)
  */
 class Map extends React.Component {
 
@@ -17,23 +19,12 @@ class Map extends React.Component {
 
   }
 
-  componentDidMount() {
-    console.log('?????',this.props);
-  }
-
-
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-
-  //   console.log('-componentDidUpdate=', prevProps, prevState, snapshot);
-
-  // }
 
   render() {
 
     return (
       <MapPresentation
-        {...this.props.city}
-        points={this.props.points}
+        {...this.props}
         {...this.state}
       />
     );
@@ -46,8 +37,8 @@ class Map extends React.Component {
  * Component props validation
  */
 Map.propTypes = {
-  city: PropTypes.PropTypes.shape({}).isRequired,
-  // city: PropTypes.PropTypes.shape({}),
+  points: PropTypes.PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  center: PropTypes.PropTypes.shape({}).isRequired,
   // formActive: PropTypes.bool,
   // handleChange: PropTypes.func.isRequired,
   // spacing: PropTypes.string,

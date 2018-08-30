@@ -27,7 +27,6 @@ const MapPresentation = ({
       >
         {
           points.map((point) => {
-            console.log('point=', point)
             return <Point
                     key={point.id}
                     lat={point.lat}
