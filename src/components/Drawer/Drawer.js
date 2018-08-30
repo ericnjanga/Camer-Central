@@ -92,7 +92,7 @@ const styles = theme => ({
     height: '100%',
     maxWidth: '400px',
     color: '#fff',
-    background: '#216728',
+    background: '#297d32',
     // ...theme.mixins.gutters(),
 
     textAlign: 'left',

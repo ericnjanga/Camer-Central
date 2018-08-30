@@ -33,7 +33,7 @@ const AppPresentation = ({
       />
 
       {
-        console.log('>>>>', points)
+        // console.log('>>>>', points)
         // <FilterContext.Consumer>
         // {
         //   filters => (
