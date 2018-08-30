@@ -11,6 +11,7 @@ import { appText } from './../../settings/dummy-data.js';
  * UI Rendering
  */
 const Drawer = ({ //DrawerPresentation
+  filters1,
   // brandName,
   points,
   handleChange,
@@ -24,27 +25,19 @@ const Drawer = ({ //DrawerPresentation
       </h2>
 
 
+      <DropdownSelector
+        list={filters1}
+        title="Cities"
+        name="Cities"
+        type="filters"
+        value={ getDefaultVal(filters1, 'title') }
+        handleChange={handleChange}
+      />
+
       {
-        points.map(point => <PreviewPoint {...point} />)
+        points.map(point => <PreviewPoint key={point.id} {...point} />)
       }
 
-      
-
-      {
-        // data.map(dt => {
-        //   return (
-        //     <DropdownSelector
-        //       key={dt.id}
-        //       title={dt.title}
-        //       name={dt.name}
-        //       type="filters"
-        //       value={ getDefaultVal(dt.data)[0].value }
-        //       list={dt.data}
-        //       handleChange={handleChange}
-        //     />
-        //   )
-        // })
-      }
 
       <div style={{ border: '3px solid lime', marginTop: '100px', padding: '10px'}}>
         <h3>Nice Dev Examples</h3>
@@ -73,9 +66,9 @@ const Drawer = ({ //DrawerPresentation
 };
 
 
-const getDefaultVal = (list) => {
-  // console.log('list=', list);
-  return list.filter(item => item.active);
+const getDefaultVal = (list, ppt) => {
+  console.log('list=---', list.filter(item => item.active) );
+  return list.filter(item => item.active)[0][ppt];
 }
 
 

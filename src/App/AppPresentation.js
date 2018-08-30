@@ -12,41 +12,42 @@ import { getCollItemByPptVal } from './../utilities/func/mix1.js';
 import { FilterContext } from './../settings/basic.js';
 
 const AppPresentation = ({
+  cities,
   points,
   handleChange,
 }) => {
 
+
   return (
     <div className="App">
       <Drawer
-        // data={filters}
+        filters1={cities}
         points={points}
         handleChange={handleChange}
       />
 
-  
+      {
+        // <FilterContext.Consumer>
+        // {
+        //   filters => (
+        //     <React.Fragment>
+        //       {
+        //         console.log('...', filters)
+        //       }
+        //       <div style={{ position: 'fixed', bottom: '150px', padding: '10px',
+        //       right: '150px', background: '#333', color: '#fff', zIndex: '1000'}}>
+        //         <p>active city: { filters.city.name }</p>
+        //         <p>total points: { filters.points.length }</p>
+        //       </div>
 
-
-      <FilterContext.Consumer>
-        {
-          filters => (
-            <React.Fragment>
-              {
-                console.log('...', filters)
-              }
-              <div style={{ position: 'fixed', bottom: '150px', padding: '10px',
-              right: '150px', background: '#333', color: '#fff', zIndex: '1000'}}>
-                <p>active city: { filters.city.name }</p>
-                <p>total points: { filters.points.length }</p>
-              </div>
-
-              <Map
-                {...filters}
-              />
-            </React.Fragment>
-          )
-        }
-      </FilterContext.Consumer>
+        //       <Map
+        //         {...filters}
+        //       />
+        //     </React.Fragment>
+        //   )
+        // }
+        // </FilterContext.Consumer>
+      }
 
     </div>
   );

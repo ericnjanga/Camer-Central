@@ -88,7 +88,7 @@ const points = [
     price: null, // is this something that can be purchased?
   },
   {
-    id: 0,
+    id: 1,
     name: 'Old Port of Montreal',
     title: 'Old Port of Montreal',
     images: [

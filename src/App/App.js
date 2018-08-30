@@ -6,6 +6,7 @@ import { toggleCollectionProperty, getCollItemByPptVal, getAllItemsOfCollByPptVa
 // import logo from './logo.svg';
 import './App.css';
 
+
 class App extends Component {
 
   constructor(props) {
@@ -17,16 +18,20 @@ class App extends Component {
 
   }
 
+
   /**
    * Save active city and its connected points in the state
    */
   componentDidMount() {
 
-    // 1- Get active city
-    const city = getCollItemByPptVal(settings.cities, 'active', true)[0];
-    const points = settings.points.filter(point => point.cityCode===city.code);
+    const { cities } = settings;
+    const activeCity = getCollItemByPptVal(cities, 'active', true)[0];
 
-    this.setState({ city, points });
+    // Get points related to 'active city' (active city is set on the cloud)
+    const points = settings.points.filter(point => point.cityCode===activeCity.code);
+
+    // Save list of cities and points
+    this.setState({ cities, points });
 
   }
 
@@ -75,7 +80,7 @@ class App extends Component {
 
   render() {
 
-    if (!this.state.points || !this.state.city) {
+    if (!this.state.points || !this.state.cities) {
 
       return '...loading. Please wait!';
 
@@ -93,5 +98,6 @@ class App extends Component {
   }
 
 }
+
 
 export default App;
