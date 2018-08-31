@@ -23,7 +23,7 @@ const Drawer = ({ //DrawerPresentation
     <div className={`app-sidebar ${classes.root}`}>
       <section className="app-sidebar__section">
         <h2 className={classes.brand}>
-          <StarIcon className={classes.brandIcon} />
+          <StarIcon className={`${classes.brandIcon} rotating`} />
           { appText.brandName }
         </h2>
       </section>
